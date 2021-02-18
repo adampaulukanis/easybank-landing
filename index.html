@@ -1,3 +1,7 @@
+<!--
+    The code was borrow from Jessica Chan
+    https://www.youtube.com/watch?v=aoQ6S1a32j8&t=12295s
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,12 +27,17 @@
     </head>
     <body>
         <header class="header">
+            <div class="overlay"></div>
             <nav class="flex flex-jc-sb flex-ai-c">
                 <a href="/" class="header__logo">
                     <img src="images/logo.svg" alt="Easybank" />
                 </a>
 
-                <a href="#" class="header__menu hide-for-desktop">
+                <a
+                    id="btnHamburger"
+                    href="#"
+                    class="header__menu hide-for-desktop"
+                >
                     <span></span>
                     <span></span>
                     <span></span>

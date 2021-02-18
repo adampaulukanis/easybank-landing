@@ -10,8 +10,8 @@
     --white: hsl(0, 0%, 100%);
 
     /* Font sizes */
-    --font-sm: 0.875em; /* 14px */
-    --font-med: 1.125em; /* 18px */
+    --font-sm: 0.875rem; /* 14px */
+    --font-med: 1.125rem; /* 18px */
 }
 html {
     font-size: 100%;
@@ -24,8 +24,7 @@ html {
 }
 body {
     margin: 0;
-    padding: 1.125em;
-    font-size: var(--font-med); /* 18px, where 1em = 16px */
+    font-size: var(--font-med); /* 18px, where 1rem = 16px */
     line-height: 1.3;
     font-family: "Public Sans", sans-serif;
     font-weight: 300;
@@ -68,10 +67,34 @@ a:hover {
     width: 26px;
     height: 2px;
     background-color: var(--dark-blue);
+    transition: all 300ms ease-in-out;
+    transform-origin: 3px 1px;
 }
-.header__menu > span:not(:last-child) {
-    margin-bottom: 3px;
+.header .header__menu > span:not(:last-child) {
+    margin-bottom: 5px;
 }
+.header.open .header__menu > span:first-child {
+    transform: rotate(45deg);
+}
+.header.open .header__menu > span:nth-child(2) {
+    opacity: 0;
+}
+.header.open .header__menu > span:last-child {
+    transform: rotate(-45deg);
+}
+.header .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 3.75rem;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(var(--dark-blue), transparent);
+}
+.header .overlay.fade-in {
+    display: block;
+}
+
 .header__link a {
     position: relative;
     font-size: var(--font-med);
@@ -104,7 +127,7 @@ a:hover {
     opacity: 1;
 }
 .button {
-    padding: 0.875em 2.1875em;
+    padding: 0.875rem 2.1875rem;
     background: linear-gradient(
         to right,
         var(--lime-green),
@@ -133,4 +156,38 @@ a.header__cta:hover {
     .hide-for-mobile {
         display: none;
     }
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    1% {
+        visibility: visible;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 300ms ease-in-out forwards;
+}
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    99% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+.fade-out {
+    animation: fade-out 300ms ease-in-out forwards;
 }
