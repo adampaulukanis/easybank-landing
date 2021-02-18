@@ -23,20 +23,20 @@
             href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
-        <link href="app/css/style.css" rel="stylesheet" />
+        <link href="./app/css/style.css" rel="stylesheet" />
     </head>
     <body>
         <header class="header">
-            <div class="overlay"></div>
-            <nav class="flex flex-jc-sb flex-ai-c">
+            <div class="overlay has-fade"></div>
+            <nav class="flex flex-jc-sb flex-ai-c container">
                 <a href="" class="header__logo">
-                    <img src="images/logo.svg" alt="Easybank" />
+                    <img src="./images/logo.svg" alt="Easybank" />
                 </a>
 
                 <a
                     id="btnHamburger"
                     href="#"
-                    class="header__menu hide-for-desktop"
+                    class="header__toggle hide-for-desktop"
                 >
                     <span></span>
                     <span></span>
@@ -62,6 +62,14 @@
                 </p>
                 -->
             </nav>
+
+            <div class="header__menu has-fade">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+            </div>
         </header>
         <main class="content">
             Request Invite Why choose Easybank? We leverage Open Banking to turn
@@ -90,6 +98,6 @@
             Reserved
         </main>
 
-        <script src="app/js/main.js"></script>
+        <script src="./app/js/main.js"></script>
     </body>
 </html>
