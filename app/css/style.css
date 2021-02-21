@@ -36,6 +36,11 @@ body.noscroll {
 ul {
     list-style-type: none;
 }
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
 a,
 a:visited,
 a:hover {
@@ -43,8 +48,12 @@ a:hover {
 }
 /* Spacing */
 .container {
-    padding-left: 1.5rem;
+    max-width: 69.375rem;
+    margin: 0 auto;
+    padding-top: 2.25rem;
     padding-right: 1.5rem;
+    padding-bottom: 2.25rem;
+    padding-left: 1.5rem;
 }
 /* Flexbox and its helper classes */
 .flex {
@@ -152,6 +161,7 @@ a:hover {
     opacity: 1;
 }
 .button {
+    display: inline-block;
     padding: 0.875rem 2.1875rem;
     background: linear-gradient(
         to right,
@@ -161,20 +171,36 @@ a:hover {
     border-radius: 50px;
     cursor: pointer;
     color: var(--white);
-    font-weight: 400;
-}
-a.header__cta {
     font-size: var(--font-sm);
-    color: var(--white);
+    font-weight: 400;
     transition: opacity 300ms ease-in-out;
 }
-a.header__cta:hover {
+.button:hover {
     opacity: 0.75;
+}
+a.header__cta {
+}
+a.header__cta:hover {
 }
 
 @media (min-width: 64em) {
     .hide-for-desktop {
         display: none;
+    }
+    .hero {
+        display: flex;
+        align-items: center;
+    }
+    .hero__image {
+        flex: 3;
+        order: 2;
+        height: 41rem;
+        background-image: url("/images/bg-intro-desktop.svg") !important;
+        background-position: left center;
+    }
+    .hero_text {
+        flex: 2;
+        order: 1;
     }
 }
 @media (max-width: 63.9375em) {
@@ -220,4 +246,39 @@ a.header__cta:hover {
 }
 .fade-out {
     animation: fade-out 200ms ease-in-out forwards;
+}
+/* Hero */
+.hero {
+}
+.hero__image {
+    position: relative;
+    background-image: url("/images/bg-intro-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+}
+.hero__image::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url("/images/image-mockups.png");
+    background-size: 93%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.hero__text {
+    text-align: center;
+}
+.hero__text h1 {
+    font-weight: 300;
+    font-size: 2.31rem;
+    line-height: 1.15;
+    color: var(--dark-blue);
+    margin-bottom: 1.5rem;
+}
+.hero__text p {
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
 }
